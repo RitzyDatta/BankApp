@@ -1,0 +1,44 @@
+
+<div id='table1'>
+    <mat-form-field id='filter'>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="ifsc">
+      <mat-header-cell *matHeaderCellDef> IFSC </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.ifsc}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="bank_id">
+      <mat-header-cell *matHeaderCellDef> Bank Id </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.bank_id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="branch">
+      <mat-header-cell *matHeaderCellDef> Branch </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.branch}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.address}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.city}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="district">
+      <mat-header-cell *matHeaderCellDef> District </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.district}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="state">
+      <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.state}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="bank_name">
+      <mat-header-cell *matHeaderCellDef> Bank Name </mat-header-cell>
+      <mat-cell *matCellDef="let bank"> {{bank.bank_name}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator id='page' [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

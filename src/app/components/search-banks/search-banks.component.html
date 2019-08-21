@@ -1,0 +1,13 @@
+<div>
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="changeBank($event)">
+     <!-- <mat-option>None</mat-option> -->
+      <mat-option value="KOLKATA">Kolkata</mat-option>
+      <mat-option value="MUMBAI">Mumbai</mat-option>
+      <mat-option value="BENGALURU">Bengaluru</mat-option>
+      <mat-option value="PUNE">Pune</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
